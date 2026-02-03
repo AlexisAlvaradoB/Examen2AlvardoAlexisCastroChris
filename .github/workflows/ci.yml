@@ -38,10 +38,12 @@ jobs:
           components: "platform-tools, build-tools;30.0.3, platform;android-34"
 
       - name: Grant execute permission for gradlew
-        run: chmod +x ./Examen2/gradlew
+        working-directory: Examen2
+        run: chmod +x ./gradlew
 
       - name: Build with Gradle
-        run: ./Examen2/gradlew assembleDebug --no-daemon --stacktrace
+        working-directory: Examen2
+        run: ./gradlew assembleDebug --no-daemon --stacktrace
 
   test:
     name: Run Unit Tests
@@ -75,7 +77,9 @@ jobs:
           components: "platform-tools, build-tools;30.0.3, platform;android-34"
 
       - name: Grant execute permission for gradlew
-        run: chmod +x ./Examen2/gradlew
+        working-directory: Examen2
+        run: chmod +x ./gradlew
 
       - name: Run unit tests
-        run: ./Examen2/gradlew :app:testDebugUnitTest --no-daemon --stacktrace
+        working-directory: Examen2
+        run: ./gradlew :app:testDebugUnitTest --no-daemon --stacktrace
