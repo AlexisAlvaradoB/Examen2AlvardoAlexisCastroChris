@@ -6,7 +6,6 @@ on:
       - develop
       - main
 
-
 jobs:
   build:
     name: Build Project
@@ -28,15 +27,15 @@ jobs:
           path: |
             ~/.gradle/caches
             ~/.gradle/wrapper/
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          key: "${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}"
           restore-keys: |
-            ${{ runner.os }}-gradle-
+            "${{ runner.os }}-gradle-"
 
       - name: Set up Android SDK
         uses: android-actions/setup-android@v2
         with:
           api-level: 34
-          components: platform-tools, build-tools;30.0.3, platform;android-34
+          components: "platform-tools, build-tools;30.0.3, platform;android-34"
 
       - name: Grant execute permission for gradlew (project root: Examen2)
         run: chmod +x ./Examen2/gradlew
@@ -65,15 +64,15 @@ jobs:
           path: |
             ~/.gradle/caches
             ~/.gradle/wrapper/
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          key: "${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}"
           restore-keys: |
-            ${{ runner.os }}-gradle-
+            "${{ runner.os }}-gradle-"
 
       - name: Set up Android SDK
         uses: android-actions/setup-android@v2
         with:
           api-level: 34
-          components: platform-tools, build-tools;30.0.3, platform;android-34
+          components: "platform-tools, build-tools;30.0.3, platform;android-34"
 
       - name: Grant execute permission for gradlew (project root: Examen2)
         run: chmod +x ./Examen2/gradlew
