@@ -37,11 +37,11 @@ jobs:
           api-level: 34
           components: platform-tools, build-tools;30.0.3, platform;android-34
 
-      - name: Grant execute permission for gradlew
-        run: chmod +x ./gradlew
+      - name: Grant execute permission for gradlew (project root: Examen2)
+        run: chmod +x ./Examen2/gradlew
 
       - name: Build with Gradle
-        run: ./gradlew assembleDebug --no-daemon --stacktrace
+        run: ./Examen2/gradlew assembleDebug --no-daemon --stacktrace
 
   test:
     name: Run Unit Tests
@@ -74,8 +74,8 @@ jobs:
           api-level: 34
           components: platform-tools, build-tools;30.0.3, platform;android-34
 
-      - name: Grant execute permission for gradlew
-        run: chmod +x ./gradlew
+      - name: Grant execute permission for gradlew (project root: Examen2)
+        run: chmod +x ./Examen2/gradlew
 
       - name: Run unit tests
-        run: ./gradlew :app:testDebugUnitTest --no-daemon --stacktrace
+        run: ./Examen2/gradlew :app:testDebugUnitTest --no-daemon --stacktrace
